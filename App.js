@@ -13,7 +13,7 @@ export default function App() {
 		<NavigationContainer>
 			<Stack.Navigator initialRouteName="Home" screenOptions={{ headerStyle: {backgroundColor: '#fdf7ef' }}}>
 				<Stack.Screen name="Home" component={Home} options={{ headerTitle: props => <DelivecrousTitle {...props} /> }} />
-				<Stack.Screen name="Details" component={Details} />
+				<Stack.Screen name="Details" component={Details} options={{ headerTitle: props => <DelivecrousTitle {...props} />}} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	)
