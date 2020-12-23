@@ -1,23 +1,28 @@
 import React from 'react';
-import { StyleSheet, View, Text, Button } from 'react-native';
+import { StyleSheet, ScrollView, Text, FlatList, Image } from 'react-native';
+import meals from '../Data/MealData'
+import MealItem from './MealItem'
 
-export default function Home({navigation}) {
-    
+const Home = () => {
     return (
-        <View style={styles.container}>
-        <Text style={styles.title}>La carte</Text>
-        <Button title="Press Me" onPress={() => {navigation.navigate('Details')}} />
-    </View>
+        <ScrollView>
+            <Text style={styles.title}>La carte</Text>
+            <FlatList
+                numColumns={2}
+                style={styles.list}
+                data={meals}
+                renderItem={({item}) => <MealItem meal={item} />}
+                keyExtractor={item => item.id}
+            />
+        </ScrollView>
     )
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1
-    },
     title: {
-        fontWeight: 'bold',
-        padding: 8,
+        padding: 12,
         fontSize: 22
     }
 })
+
+export default Home
