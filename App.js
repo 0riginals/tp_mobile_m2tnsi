@@ -1,23 +1,24 @@
 import React from 'react';
-import { StyleSheet, Button } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import Home from './Components/Home'
-import Details from './Components/Details'
 import DelivecrousTitle from './Components/DelivecrousTitle';
+import { Provider } from 'react-redux'
+import Store from './Store/configureStore'
 
-const Stack = createStackNavigator()
-
-export default function App() {
+const App = () => {
+	const Stack = createStackNavigator()
 	return (
-		<NavigationContainer>
-			<Stack.Navigator initialRouteName="Home" screenOptions={{ headerStyle: {backgroundColor: '#fdf7ef' }}}>
-				<Stack.Screen name="Home" component={Home} options={{ headerTitle: props => <DelivecrousTitle {...props} /> }} />
-				<Stack.Screen name="Details" component={Details} options={{ headerTitle: props => <DelivecrousTitle {...props} />}} />
-			</Stack.Navigator>
-		</NavigationContainer>
+		<Provider store={Store}>
+			<NavigationContainer>
+				<Stack.Navigator initialRouteName="Home" screenOptions={{ headerStyle: {backgroundColor: '#fdf7ef' }}}>
+					<Stack.Screen name="Home" component={Home} options={{ headerTitle: () => <DelivecrousTitle /> }} />
+					<Stack.Screen name="Mea" component={Home} options={{ headerTitle: () => <DelivecrousTitle  /> }} />
+					<Stack.Screen name="ShoppingCart" component={Home} options={{ headerTitle: () => <DelivecrousTitle /> }} />
+				</Stack.Navigator>
+			</NavigationContainer>
+		</Provider>
 	)
 }
 
-const styles = StyleSheet.create({
-})
+export default App
