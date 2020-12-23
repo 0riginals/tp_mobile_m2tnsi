@@ -48,4 +48,11 @@ export default data = [
         price: 6.20,
         image: require('../img/cookiesChocolat.webp')
     },
+    {
+	    id: 8,
+	    title: 'Crumble aux pommes',
+	    description: 'Attention de ne pas tomber dedans.',
+	    price: 11.50,
+	    image: require('../img/crumblePommes.webp')
+    }
 ]
