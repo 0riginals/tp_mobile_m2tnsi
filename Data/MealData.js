@@ -16,7 +16,7 @@ export default data = [
     {
         id: 3,
         title: 'Gateau au chocolat',
-        description: 'Oui, celui de votre enfance!',
+        description: 'Oui, celui de votre enfance! Que de souvenirs...',
         price: 14.90,
         image: require('../img/gateauChocolat.webp')
     },
@@ -37,7 +37,7 @@ export default data = [
     {
         id: 6,
         title: 'Panna Cotta',
-        description: 'La fraicheur et le fruit.',
+        description: 'La fraicheur et la passion du fruit.',
         price: 9.99,
         image: require('../img/pannaCotta.webp')
     },
