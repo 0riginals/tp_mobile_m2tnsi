@@ -1,7 +1,9 @@
 import React from 'react';
-import { StyleSheet, ScrollView, Text, FlatList, Image } from 'react-native';
+import { StyleSheet, ScrollView, Text, FlatList } from 'react-native';
 import meals from '../Data/MealData'
 import MealItem from './MealItem'
+import { connect } from 'react-redux'
+
 
 const Home = () => {
     return (
@@ -18,6 +20,7 @@ const Home = () => {
     )
 }
 
+
 const styles = StyleSheet.create({
     title: {
         padding: 12,
@@ -25,4 +28,10 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Home
+const mapStateToProps = (state) => {
+    return {
+        items: state.items
+    }
+}
+
+export default connect(mapStateToProps)(Home)
