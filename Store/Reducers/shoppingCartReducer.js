@@ -19,6 +19,12 @@ const shoppingCartReducer = (state = initialState, action) => {
                 }
             }
             return nextState || state
+        case 'BUY_PRODUCTS':
+            nextState = {
+                ...state,
+                items: []
+            }
+            return nextState || state
         default:
             return state
     }

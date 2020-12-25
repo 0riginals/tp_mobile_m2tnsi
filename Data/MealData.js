@@ -3,7 +3,7 @@ export default data = [
         id: 1,
         title: 'Fondant au chocolat',
         description: 'Un coeur en chocolat qui vous fera fondre.',
-        price: 6.59,
+        price: 6.60,
         image: require('../img/fondantChocolat.webp')
     },
     {
@@ -38,7 +38,7 @@ export default data = [
         id: 6,
         title: 'Panna Cotta',
         description: 'La fraicheur et la passion du fruit.',
-        price: 9.99,
+        price: 9.90,
         image: require('../img/pannaCotta.webp')
     },
     {

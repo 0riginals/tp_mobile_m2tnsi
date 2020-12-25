@@ -13,7 +13,7 @@ const DelivecrousTitle = (props) => {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Delivecrous</Text>
-            <TouchableOpacity style={styles.cart} onPress={() => {navigation.navigate('ShoppingCart')}}>            
+            <TouchableOpacity style={styles.cart} onPress={() => { navigation.navigate('ShoppingCart') }}>            
                 <Image source={require('../img/shopping_cart.png')} style={styles.img} />                
                 <Badge value={ count } status="error" containerStyle={styles.badge} />
             </TouchableOpacity>
