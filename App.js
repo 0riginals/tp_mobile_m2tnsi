@@ -5,6 +5,8 @@ import Home from './Components/Home'
 import DelivecrousTitle from './Components/DelivecrousTitle';
 import { Provider } from 'react-redux'
 import Store from './Store/configureStore'
+import ShoppingCart from './Components/ShoppingCart';
+
 
 const App = () => {
 	const Stack = createStackNavigator()
@@ -13,12 +15,13 @@ const App = () => {
 			<NavigationContainer>
 				<Stack.Navigator initialRouteName="Home" screenOptions={{ headerStyle: {backgroundColor: '#fdf7ef' }}}>
 					<Stack.Screen name="Home" component={Home} options={{ headerTitle: () => <DelivecrousTitle /> }} />
-					<Stack.Screen name="Mea" component={Home} options={{ headerTitle: () => <DelivecrousTitle  /> }} />
-					<Stack.Screen name="ShoppingCart" component={Home} options={{ headerTitle: () => <DelivecrousTitle /> }} />
+					<Stack.Screen name="Meal" component={Home} options={{ headerTitle: () => <DelivecrousTitle  /> }} />
+					<Stack.Screen name="ShoppingCart" component={ShoppingCart} options={{ headerTitle: () => <DelivecrousTitle /> }} />
 				</Stack.Navigator>
 			</NavigationContainer>
 		</Provider>
 	)
 }
+
 
 export default App
