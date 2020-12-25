@@ -1,16 +1,19 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { StyleSheet, View, Text, Image } from 'react-native'
 import { Badge } from 'react-native-elements'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import { connect } from 'react-redux'
+import { useNavigation } from '@react-navigation/native'
+
 
 const DelivecrousTitle = (props) => {
-    let [count, setCount] = useState(0)
-    // can't use props here since props are related to component
-    // state however can be accessed from everywhere in shape of : getter, setter
+    const count = props.items.length
+    const navigation = useNavigation()
+
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Delivecrous</Text>
-            <TouchableOpacity style={styles.cart} onPress={() => {setCount(count+1)}}>            
+            <TouchableOpacity style={styles.cart} onPress={() => {navigation.navigate('ShoppingCart')}}>            
                 <Image source={require('../img/shopping_cart.png')} style={styles.img} />                
                 <Badge value={ count } status="error" containerStyle={styles.badge} />
             </TouchableOpacity>
@@ -39,4 +42,10 @@ const styles = StyleSheet.create({
     }
 })
 
-export default DelivecrousTitle
+const mapStateToProps = (state) => {
+    return {
+        items: state.items
+    }
+}
+
+export default connect(mapStateToProps)(DelivecrousTitle)
